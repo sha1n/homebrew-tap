@@ -10,7 +10,7 @@ class Bert < Formula
 
   def install
     # system "./configure", *std_configure_args, "--disable-silent-rules"
-    system make go-build-current
+    system "make", "go-build-current"
     bin.install "bin/bert" => "bert"
   end
 
