@@ -1,8 +1,12 @@
 class Bert < Formula
+  BERT_VERSION = "v2.3.5".freeze
+  BERT_BUILD = "4fc18e7914ab4373a3d71233c12bbf12e513d408".freeze
+  BERT_SHA256 = "7418bb86fdc30f2a9b7cc08e2c6b97dbd08387efaed26c8322a27d58f8e4e843".freeze
+
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/bert/"
-  url "https://github.com/sha1n/bert/archive/refs/tags/v2.3.4.tar.gz"
-  sha256 "6ddf9d3a13ba5593ff6b28d1abb35f49d7cfcc064833a4407e6ce50a477c55ee"
+  url "https://github.com/sha1n/bert/archive/refs/tags/#{BERT_VERSION}.tar.gz"
+  sha256 "#{BERT_SHA256}"
   license "MIT"
 
   depends_on "go" => :build
@@ -10,6 +14,9 @@ class Bert < Formula
 
   def install
     # system "./configure", *std_configure_args, "--disable-silent-rules"
+    ENV["VERSION"] = BERT_VERSION
+    ENV["BUILD"] = BERT_BUILD
+
     system "make", "go-build-current"
     bin.install "bin/bert" => "bert"
   end
