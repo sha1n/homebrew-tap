@@ -12,26 +12,26 @@ class Bert < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "a94259882407b46cff6d06ca4a151a673248c7910147c9db2b56ef420b8daae8"
+      sha256 "5fcf09e33bafd2f17fef332017b309940ee0dacddb278688981a00451561872b"
     end
     if Hardware::CPU.arm?
       url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "3e1de732746538976dba721e6320b66a6c739862103e3ba365ea7e60bc2bd66d"
+      sha256 "c73dae420f01d224c466fbd00208bf3a98156162e773dfa3d7350b1786001f1e"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "88536c64017fe0be290746fe864f82c573d319c217265cb287523fde6bb540c0"
+      sha256 "eb27f26e409823548482bb749bff9aa09849ba4a3fe4963dc1fe3e0ab32591fa"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "fd6a658db4a079241b7b6a237ef026c73d14a98b5bdb1c499da42ac879ddcc9e"
+      sha256 "0d8d28671f100c0a2e2df30a2246e4f7d32aef771a94a8fa1c2949389c18aac9"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "3d86664df9bfdce4407ccd8cd5dde8815ce265f5aea1f1ea27699067307ed6f0"
+      sha256 "c6160cbe2940b7eb7dee300296302b9757e9ba7416fd6a3f3edfe56518aa4752"
     end
   end
 
