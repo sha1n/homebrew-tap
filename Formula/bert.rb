@@ -6,7 +6,7 @@ class Bert < Formula
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/bert/"
   url "https://github.com/sha1n/bert/archive/refs/tags/#{BERT_VERSION}.tar.gz"
-  sha256 "#{BERT_SHA256}"
+  sha256 BERT_SHA256.to_s
   license "MIT"
 
   depends_on "go" => :build
@@ -22,6 +22,6 @@ class Bert < Formula
   end
 
   test do
-    system "false"
+    system "bert", "--version"
   end
 end
