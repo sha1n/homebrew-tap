@@ -10,4 +10,5 @@ brew install <formula>
 ## Formula
 | Repository | Formula | Description |
 | ---------- | ------- | ----------- |
-| [bert](https://github.com/sha1n/bert) | [bert.rb](Formula/bert.rb) | CLI benchmarking tool |
+| [bert](https://github.com/sha1n/bert) | [bert](Formula/bert.rb) | CLI benchmarking tool |
+| [hako](https://github.com/sha1n/hako) | [hako](Formula/hako.rb) | HTTP echo server CLI utility |
