@@ -5,33 +5,33 @@
 class Bert < Formula
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/bert/"
-  version "2.3.7"
+  version "2.3.8"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "5fcf09e33bafd2f17fef332017b309940ee0dacddb278688981a00451561872b"
+      url "https://github.com/sha1n/bert/releases/download/v2.3.8/bert_2.3.8_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "4f7adac45b18bfd978cbbcb3fae6f19d90ab71ebe22cd9e41ee94ca0ff837968"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c73dae420f01d224c466fbd00208bf3a98156162e773dfa3d7350b1786001f1e"
+      url "https://github.com/sha1n/bert/releases/download/v2.3.8/bert_2.3.8_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "0f99acff7794b0f2d5832ab8085c3e9f7559d8e23d871d2c9e542cc928e49ef4"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "eb27f26e409823548482bb749bff9aa09849ba4a3fe4963dc1fe3e0ab32591fa"
+      url "https://github.com/sha1n/bert/releases/download/v2.3.8/bert_2.3.8_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "0e1ff39d85f800ebe09e7b8f35b039a9c91a6c9db6ff13a0ebc4f5cfcd862614"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "0d8d28671f100c0a2e2df30a2246e4f7d32aef771a94a8fa1c2949389c18aac9"
+      url "https://github.com/sha1n/bert/releases/download/v2.3.8/bert_2.3.8_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "92e9c6a7b0552db619b07f465d500deae8481c80b7a00080ca5adf6876dd86f2"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/bert/releases/download/v2.3.7/bert_2.3.7_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c6160cbe2940b7eb7dee300296302b9757e9ba7416fd6a3f3edfe56518aa4752"
+      url "https://github.com/sha1n/bert/releases/download/v2.3.8/bert_2.3.8_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "ec215e7e0854f85d78d087f5d6d7080e738ec417acbbaa1284e3c257301b1f64"
     end
   end
 
