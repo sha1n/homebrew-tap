@@ -5,33 +5,33 @@
 class Hako < Formula
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/hako/"
-  version "0.6.5"
+  version "0.6.6"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.5/hako_0.6.5_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "68f89110de624dafcd96d7bf61bfb212c9fbd2dcb96777ec421beefd256bb6e5"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "c6191a2911858daea1e30cdb107baacf811962c13462a3fed5dfdfe89a374833"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.5/hako_0.6.5_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "55beeb477eedd6e576eda34214bae223175cb53614f042137bcba0b602ed7e7d"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "53de7c73ba9fd34c7e8ee7a946a49e6fd1a662a2d1641f27f0d649aa1ae5a289"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.5/hako_0.6.5_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "1790b0c0d89aab8a0c22c83f36cdb2ccda394a0f2a06d761be7c5630a4d1ae0a"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "c8f662299ae7cd48752fc15170729af9d3162f4c6d5ae04b31cd09ae1d0f66c3"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.5/hako_0.6.5_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c242b6284a8e459c9e9a9332e6f3b81fc800a6070aa354f4df9e0b3d08548b3a"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "74d12e5a378c84a0d029daa5534e209aa2ab112fc1218ee172f053057f06cdb6"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.5/hako_0.6.5_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "9f5090b1729e842dd92ed1aa7c2634e74977804f632e2fd093e232a3ee88399e"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "10207df27a3b81320595ce950490f0305245710b6febd79ed5691af34f65be7c"
     end
   end
 
