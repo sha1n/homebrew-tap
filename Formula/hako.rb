@@ -5,41 +5,68 @@
 class Hako < Formula
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/hako/"
-  version "0.6.6"
+  version "0.6.7"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c6191a2911858daea1e30cdb107baacf811962c13462a3fed5dfdfe89a374833"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "53de7c73ba9fd34c7e8ee7a946a49e6fd1a662a2d1641f27f0d649aa1ae5a289"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.7/hako_0.6.7_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "8151d5618849ce99dde5b9ef471504fdf0d680b53eb02b74082cf807a1a09a01"
+
+      def install
+        bin.install "hako"
+        bash_completion.install "completions/hako.bash" => "hako"
+        fish_completion.install "completions/hako.fish" => "hako"
+        zsh_completion.install "completions/_hako" => "_hako"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/sha1n/hako/releases/download/v0.6.7/hako_0.6.7_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "7b32c23d67077d159ea86a05759d5651cfd99f65531bca1444ff3835c58f2023"
+
+      def install
+        bin.install "hako"
+        bash_completion.install "completions/hako.bash" => "hako"
+        fish_completion.install "completions/hako.fish" => "hako"
+        zsh_completion.install "completions/_hako" => "_hako"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c8f662299ae7cd48752fc15170729af9d3162f4c6d5ae04b31cd09ae1d0f66c3"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.7/hako_0.6.7_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "a2d0c24df16d0bb9f3029dfada1ff65e2819685cc5a14083988495620834da52"
+
+      def install
+        bin.install "hako"
+        bash_completion.install "completions/hako.bash" => "hako"
+        fish_completion.install "completions/hako.fish" => "hako"
+        zsh_completion.install "completions/_hako" => "_hako"
+      end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "74d12e5a378c84a0d029daa5534e209aa2ab112fc1218ee172f053057f06cdb6"
+      url "https://github.com/sha1n/hako/releases/download/v0.6.7/hako_0.6.7_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "f2ddb51c62bda93cb11147341aaf3df1eef226c00a63435b0682673a59d6abe7"
+
+      def install
+        bin.install "hako"
+        bash_completion.install "completions/hako.bash" => "hako"
+        fish_completion.install "completions/hako.fish" => "hako"
+        zsh_completion.install "completions/_hako" => "_hako"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.6/hako_0.6.6_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "10207df27a3b81320595ce950490f0305245710b6febd79ed5691af34f65be7c"
-    end
-  end
+      url "https://github.com/sha1n/hako/releases/download/v0.6.7/hako_0.6.7_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "d37035d09534d000317e933bbcf8062287eac2a48dbfeba3a03555d4d97b2c91"
 
-  def install
-    bin.install "hako"
-    bash_completion.install "completions/hako.bash" => "hako"
-    fish_completion.install "completions/hako.fish" => "hako"
-    zsh_completion.install "completions/_hako" => "_hako"
+      def install
+        bin.install "hako"
+        bash_completion.install "completions/hako.bash" => "hako"
+        fish_completion.install "completions/hako.fish" => "hako"
+        zsh_completion.install "completions/_hako" => "_hako"
+      end
+    end
   end
 
   test do
