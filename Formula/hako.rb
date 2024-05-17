@@ -5,13 +5,13 @@
 class Hako < Formula
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/hako/"
-  version "0.6.9"
+  version "0.6.10"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.9/hako_0.6.9_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1fa10a7d582c188506d91a0d7375d6f1a3f89a34c4e2abdddd8338f295e76c2a"
+    on_intel do
+      url "https://github.com/sha1n/hako/releases/download/v0.6.10/hako_0.6.10_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "739f671adfc480837a82aaad366961167e11301bab02e3526d49e46e8a40f1ae"
 
       def install
         bin.install "hako"
@@ -20,9 +20,9 @@ class Hako < Formula
         zsh_completion.install "completions/_hako" => "_hako"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.9/hako_0.6.9_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "dda9cb1b97bd700cc835d9536cd710cbb7cde161559550ad8cd92f6f75419635"
+    on_arm do
+      url "https://github.com/sha1n/hako/releases/download/v0.6.10/hako_0.6.10_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "5e9e3c3277d70f14923b0b90f5611c9bac85968dcd8a313cc85b7a8f60d5463d"
 
       def install
         bin.install "hako"
@@ -34,37 +34,43 @@ class Hako < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.9/hako_0.6.9_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d11ae5a8d3a8e806a1245120ef6d04a05437a341e7670cebb4a017dcace155b6"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sha1n/hako/releases/download/v0.6.10/hako_0.6.10_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "3556fc4aa31f538bb7d5ac65ef751a19061b3ae95126aa818c5b718cc9e1b1c8"
 
-      def install
-        bin.install "hako"
-        bash_completion.install "completions/hako.bash" => "hako"
-        fish_completion.install "completions/hako.fish" => "hako"
-        zsh_completion.install "completions/_hako" => "_hako"
+        def install
+          bin.install "hako"
+          bash_completion.install "completions/hako.bash" => "hako"
+          fish_completion.install "completions/hako.fish" => "hako"
+          zsh_completion.install "completions/_hako" => "_hako"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.9/hako_0.6.9_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a8093ce09a4117724e37777d572e54b809814519f91b06c6cd05a01f129c4920"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/sha1n/hako/releases/download/v0.6.10/hako_0.6.10_linux_armv6.tar.gz", using: CurlDownloadStrategy
+        sha256 "e182e8c76308955d46ec50fa02b08dab66550a60bb701a72f9d4fb0fc01d8adc"
 
-      def install
-        bin.install "hako"
-        bash_completion.install "completions/hako.bash" => "hako"
-        fish_completion.install "completions/hako.fish" => "hako"
-        zsh_completion.install "completions/_hako" => "_hako"
+        def install
+          bin.install "hako"
+          bash_completion.install "completions/hako.bash" => "hako"
+          fish_completion.install "completions/hako.fish" => "hako"
+          zsh_completion.install "completions/_hako" => "_hako"
+        end
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/hako/releases/download/v0.6.9/hako_0.6.9_linux_armv6.tar.gz", using: CurlDownloadStrategy
-      sha256 "1b110aa68a439353c421b325e581e8890299b76e1676b3411ec9bcec809dfd33"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sha1n/hako/releases/download/v0.6.10/hako_0.6.10_linux_arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "a9762a33cda99a6e9be5efb1332c83ecd048838872f2d7b6e21128d9cf25e1ef"
 
-      def install
-        bin.install "hako"
-        bash_completion.install "completions/hako.bash" => "hako"
-        fish_completion.install "completions/hako.fish" => "hako"
-        zsh_completion.install "completions/_hako" => "_hako"
+        def install
+          bin.install "hako"
+          bash_completion.install "completions/hako.bash" => "hako"
+          fish_completion.install "completions/hako.fish" => "hako"
+          zsh_completion.install "completions/_hako" => "_hako"
+        end
       end
     end
   end
