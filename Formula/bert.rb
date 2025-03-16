@@ -5,13 +5,13 @@
 class Bert < Formula
   desc "CLI benchmarking tool"
   homepage "https://sha1n.github.io/bert/"
-  version "2.4.2"
+  version "2.5.0"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/sha1n/bert/releases/download/v2.4.2/bert_2.4.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "acc6758c0d5e9ab6fc09f7ed959fb3f5ed03bc1755808050bdee4c206240c2ea"
+    if Hardware::CPU.intel?
+      url "https://github.com/sha1n/bert/releases/download/v2.5.0/bert_2.5.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "ea45c14a47d9e7ee9f818888ca773e424b855d2019d9c7062fc02d83add06122"
 
       def install
         bin.install "bert"
@@ -20,9 +20,9 @@ class Bert < Formula
         zsh_completion.install "completions/_bert" => "_bert"
       end
     end
-    on_arm do
-      url "https://github.com/sha1n/bert/releases/download/v2.4.2/bert_2.4.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "98c455d31257151391bfe15fd1fec5c9b1d798bd1c879398ebd2c3e50b189b82"
+    if Hardware::CPU.arm?
+      url "https://github.com/sha1n/bert/releases/download/v2.5.0/bert_2.5.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "1d07d6a2cdc74451f513d4144c7b1261cf8d1a6afbf0ad04774522d1e30cefd9"
 
       def install
         bin.install "bert"
@@ -34,10 +34,10 @@ class Bert < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sha1n/bert/releases/download/v2.4.2/bert_2.4.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "e72467bd4e5a1391dbaba02bc85788ba0690cf45e7aad1289c36e97f3a40dd08"
+        url "https://github.com/sha1n/bert/releases/download/v2.5.0/bert_2.5.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "173b8b88754b13faacfba3ce4b1ac2eb0b37f8ca4cf6b935237657f056ee571a"
 
         def install
           bin.install "bert"
@@ -47,10 +47,10 @@ class Bert < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/sha1n/bert/releases/download/v2.4.2/bert_2.4.2_linux_armv6.tar.gz", using: CurlDownloadStrategy
-        sha256 "c902fafb3514e5810d02915bb9bdedcbbc071df70391080330783271d4788808"
+        url "https://github.com/sha1n/bert/releases/download/v2.5.0/bert_2.5.0_linux_armv6.tar.gz", using: CurlDownloadStrategy
+        sha256 "1ea23c7da185f9019a93b8d9eb114ae9459f72f9ff2abc7d45d99514380ae70c"
 
         def install
           bin.install "bert"
@@ -60,10 +60,10 @@ class Bert < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sha1n/bert/releases/download/v2.4.2/bert_2.4.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "de72c68e0f2ba5ee7f43eda5eb5c9b6b437d4cb6df8a725bd9374756172875d4"
+        url "https://github.com/sha1n/bert/releases/download/v2.5.0/bert_2.5.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "f8d714b90dd84a15dee3a6f383c6cb4549c921f98f920608963bd83f58c0a767"
 
         def install
           bin.install "bert"
