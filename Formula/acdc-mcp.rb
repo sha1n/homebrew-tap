@@ -5,20 +5,20 @@
 class AcdcMcp < Formula
   desc "MCP ACDC Server"
   homepage "https://github.com/sha1n/mcp-acdc-server"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.2/mcp-acdc-server_Darwin_x86_64.tar.gz"
-      sha256 "f14815a26df09a76483fa0d048aa8c46b5a03fdc90db21b05fdc124c8b64f3f1"
+      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.3/mcp-acdc-server_Darwin_x86_64.tar.gz"
+      sha256 "4668c294f66d1848fb4776b5cd7ee858b319ef7d9c259fcaa8030df2b89230d2"
 
       def install
         bin.install "acdc-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.2/mcp-acdc-server_Darwin_arm64.tar.gz"
-      sha256 "ff7536d1a6e92b1bc54d7bb1d6ea8a15d981e6160491cda5320f736cb946c665"
+      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.3/mcp-acdc-server_Darwin_arm64.tar.gz"
+      sha256 "685704c9b83fafb0e34ce1a2b5c2c47248855d7ec71dc59918e1da2c2e06d175"
 
       def install
         bin.install "acdc-mcp"
@@ -28,15 +28,15 @@ class AcdcMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.2/mcp-acdc-server_Linux_x86_64.tar.gz"
-      sha256 "294ea28bdf21c6003df73deff55735c2e9c7431b75c2ff708ed8f9e88c25e2d5"
+      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.3/mcp-acdc-server_Linux_x86_64.tar.gz"
+      sha256 "4f3a6998cb486fe09d1824917a7e6e9af9c98c383c92ec00173d2b4346ae47ef"
       def install
         bin.install "acdc-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.2/mcp-acdc-server_Linux_arm64.tar.gz"
-      sha256 "ed540a8e36b6e0c5d257c8bf08b526212f7d11d15b7393950bdc87fa05426cca"
+      url "https://github.com/sha1n/mcp-acdc-server/releases/download/v0.1.3/mcp-acdc-server_Linux_arm64.tar.gz"
+      sha256 "a08756939a8f48d6cd821709bb4ec02b1036926dc9c3ccfc296c0a2a1fa85d5a"
       def install
         bin.install "acdc-mcp"
       end
