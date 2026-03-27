@@ -13,3 +13,8 @@ brew install <formula>
 | [bert](https://github.com/sha1n/bert) | [bert](Formula/bert.rb) | A multi-platform CLI benchmarking tool with flexible configuration and reporting capabilities. |
 | [hako](https://github.com/sha1n/hako) | [hako](Formula/hako.rb) | A multi-platform echo HTTP server utility with a simple CLI interface. |
 | [acdc-mcp](https://github.com/sha1n/mcp-acdc-server) | [acdc-mcp](Formula/acdc-mcp.rb) | A Model Context Protocol (MCP) server that provides AI agents with searchable access to any markdown content through resources and an embedded full-text search tool. |
+
+## Casks
+| Repository | Cask | Description |
+| ---------- | ---- | ----------- |
+| [project-marker](https://github.com/sha1n/project-marker) | [projmark](Casks/projmark.rb) | CLI tool for tagging macOS Cubase and LUNA projects directories with Finder tags based on project type (personal CLI utility) |
