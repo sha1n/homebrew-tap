@@ -3,7 +3,7 @@ cask "projmark" do
   name "projmark"
   desc "CLI tool for tagging macOS directories with Finder tags based on project type"
   homepage "https://github.com/sha1n/project-marker"
-  version "0.1.0"
+  version "0.1.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,11 +14,11 @@ cask "projmark" do
   on_macos do
     on_intel do
       url "https://github.com/sha1n/project-marker/releases/download/v#{version}/project-marker_Darwin_x86_64.tar.gz"
-      sha256 "8352654427a1357fd34ed30863f0a8e905a5be9a786b5ee120114d4da8ea2fa2"
+      sha256 "decc74693ef5fba7a9146a8eb391e8ba2df12c01afb96174991c19696287610c"
     end
     on_arm do
       url "https://github.com/sha1n/project-marker/releases/download/v#{version}/project-marker_Darwin_arm64.tar.gz"
-      sha256 "d8c7470196d82f2ddbf70cbd5f738de5bf21d50f77ab0e37c25b33821e69c7d4"
+      sha256 "46ec18dc6f530039a50d3c14fcd6fabb8a9b99f1f27881a0005e30b15c11ffb2"
     end
   end
 
