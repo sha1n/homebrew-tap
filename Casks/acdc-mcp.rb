@@ -33,9 +33,9 @@ cask "acdc-mcp" do
 
   binary "acdc-mcp"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/acdc-mcp"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/acdc-mcp"]
     end
   end
 
