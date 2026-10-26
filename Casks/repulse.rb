@@ -6,25 +6,25 @@ cask "repulse" do
     end
   end
 
-  version "0.0.5"
+  version "0.0.6"
 
   on_macos do
     on_arm do
-      sha256 "1c050cecc7ee819c2a36e35f77fb427386465e4a8c979d69dc5a807338747fa3"
+      sha256 "a72cf194c9b2c42c6529759de412abe4b526e966370d7c6f446d1588328e2315"
       url "https://github.com/sha1n/homebrew-tap/releases/download/v#{version}/repulse_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "750ab5dd8daef26388088639fe747d54228ef5bfabfaa51f4a7b672f404409b1"
+      sha256 "530f27034ecabf92c989667ff5079e724032f5d6aa9c56547c81f27215f10371"
       url "https://github.com/sha1n/homebrew-tap/releases/download/v#{version}/repulse_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "5c31c78e2038cbc797ab26ed6283b78f9b2b645472fb8d842b44d739768145f9"
+      sha256 "c81a4294cc167ed498edc2cfbfdd588b50bf9604fbe0eb8dae4fbe502ac1785b"
       url "https://github.com/sha1n/homebrew-tap/releases/download/v#{version}/repulse_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "61d0d213f37a7f23bc73a865e9934bba00f32b557627fef3063cedcb1d8eb631"
+      sha256 "e90b64c6d5f55915f13c6ab117506fa3fbd861b71f370da3bdaaa00e4f098e01"
       url "https://github.com/sha1n/homebrew-tap/releases/download/v#{version}/repulse_#{version}_linux_amd64.tar.gz"
     end
   end
