@@ -6,25 +6,25 @@ cask "acdc-mcp" do
     end
   end
 
-  version "0.9.0"
+  version "0.10.0"
 
   on_macos do
     on_arm do
-      sha256 "9385832d21ddf6f0f23f6fc381164ac60e2ece2e5a4c02750a002de3f6eec68d"
+      sha256 "a1773f7032909a3c44b8499380dcf61b671425ce67fb101febd05cb7dc01bb48"
       url "https://github.com/sha1n/mcp-acdc-server/releases/download/v#{version}/mcp-acdc-server_Darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "d9730c98dee8046017f6f0a6fef7fffbda2ce09f7bc70e76ab72339ad9fe43c7"
+      sha256 "51c59bbf609d25533347100e34c3dc02446a80ffbb5f664dcd5e4fbb4312018d"
       url "https://github.com/sha1n/mcp-acdc-server/releases/download/v#{version}/mcp-acdc-server_Darwin_x86_64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "bbeac8d08d76abff17bd38c8a43b0262b25933ea166333f1070454de1d568bad"
+      sha256 "d92f3ed2a8e4ce0ca8c8a12c72e11de229929756ea53161132501c1cf8cb5a72"
       url "https://github.com/sha1n/mcp-acdc-server/releases/download/v#{version}/mcp-acdc-server_Linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "fcb5067e455b3a1a1e4d8b77e1ce7bd02754299aa94b1e867a9a6e73f1ae8ef6"
+      sha256 "8897eaaa492953068ca0aa53ede968b92c4aa1f17a3098219dc406f85faf711f"
       url "https://github.com/sha1n/mcp-acdc-server/releases/download/v#{version}/mcp-acdc-server_Linux_x86_64.tar.gz"
     end
   end
